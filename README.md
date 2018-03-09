@@ -1,5 +1,7 @@
-## Fallback Persona
+## Universal Fallback Persona
 A fallback that utilizes the persona engine
+
+this also handles non english queries
 
 ## Description
 Perosona is a Q and A machine learning algorithm that gives mycroft personality

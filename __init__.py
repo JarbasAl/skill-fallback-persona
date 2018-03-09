@@ -12,16 +12,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from mycroft import FallbackSkill, intent_handler
 import requests
 import urllib
 import eventlet
 
+from mycroft_jarbas_utils.skills.auto_translatable import AutotranslatableFallback
 
-class FallbackPersonaSkill(FallbackSkill):
+
+class FallbackPersonaSkill(AutotranslatableFallback):
     def __init__(self):
-        FallbackSkill.__init__(self)
+        AutotranslatableFallback.__init__(self)
         self.persona_url = "http://training.mycroft.ai/persona/api/persona/?"
+        self.input_lang = "en-us"
 
     def initialize(self):
         self.register_fallback(self.handle_fallback_persona, 8)
